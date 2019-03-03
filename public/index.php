@@ -3,8 +3,13 @@ include 'Api/ApiRequester.php';
 function displayWeather($country,$state,$city)
 {
   $result = ApiRequester::getAirQuality($country,$state,$city);
-  $humidity = $result['data']['current']['weather']['hu'];
+  $currentData = $result['data']['current'];
+  var_dump($currentData['weather']);
+  var_dump($currentData['pollution']);
+  $humidity = $currentData['weather']['hu'];
+  $aqi = $currentData['pollution']['aqius'];
   echo '<h2>Humidity: '.$humidity.'</h2>';
+  echo '<h2>Air Quality Index: '. $aqi .' </h2>';
   echo '<h1>City: '.$_GET['city'].'</h1>';
   echo '<h1>Country: '.$_GET['country'].'</h1>';
   echo '<h1>State / Province: '.$_GET['state'].'</h1>';
