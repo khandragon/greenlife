@@ -25,7 +25,7 @@
                 </div>
             </div>
         </nav>
-        <header class="masthead">
+        <header class="masthead mt-4">
             <div class="container h-100">
                 <div class="row h-100 align-items-center justify-content-center text-center">
                     <div class="col mt-5">
@@ -58,18 +58,18 @@
             $aqi = $currentData['pollution']['aqius'];
             $temperature =  $currentData['weather']['tp'];
 
-            echo '<div class="container-fluid mb-5">';
-            echo '<div class="row align-items-center justify-content-center text-center">';
+            echo '<div class="container-fluid mb-5 mt-5">';
+            echo '<div class="row align-items-center justify-content-center text-center ml-5 mr-5">';
             echo '<div class="col"><p class="h4">Results</p></div>';
             echo '<div class="w-100"></div>';
             echo '<div class="col"><p class="h4">Humidity</p></div>';
             echo '<div class="col"><p class="h4">'.$humidity.'</p></div>';
             echo '<div class="w-100"></div>';
-            echo '<div class="col"><p class="h4">Air Quality Index</p></div>';
+            echo '<div class="col"><p class="h4">Air Quality Index (Lower = Better)</p></div>';
             echo '<div class="col"><p class="h4">'.$aqi.'</p></div>';
             echo '<div class="w-100"></div>';
-            echo '<div class="col"><p class="h4">Temperature(celsius)</p></div>';
-            echo '<div class="col"><p class="h4">'.$temperature.' C</p></div>';
+            echo '<div class="col"><p class="h4">Temperature</p></div>';
+            echo '<div class="col"><p class="h4">'.$temperature.' Celsius</p></div>';
             echo '<div class="w-100"></div>';
             echo '<div class="col"><p class="h4">Province</p></div>';
             echo '<div class="col"><p class="h4">'.$info["state"].'</p></div>';
