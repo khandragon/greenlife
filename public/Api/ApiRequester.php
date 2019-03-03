@@ -15,9 +15,10 @@ class ApiRequester
         $json = file_get_contents($url);
         return json_decode($json, true);
     }
-    public static function getAirQuality($country, $state, $city)
+    public static function getAirQuality($lat, $lon)
     {
-        $url = AIR_URL . "country=" . $country . "&state=" . $state . "&city=" . $city . "&key=" . AIR_APIKEY;
+        //lat=%7B%7BLATITUDE%7D%7D&lon=%7B%7BLONGITUDE%7D%7D&key=%7B%7BYOUR_API_KEY
+        $url = AIR_URL . "lat=" . $lat . "&lon=" . $lon . "&key=" . AIR_APIKEY;
         $json = file_get_contents($url);
         return json_decode($json, true);
     }
