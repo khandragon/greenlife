@@ -1,15 +1,43 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 #header-bg {
-    background-image: linear-gradient(rgba(82, 104, 83, 0.5) 0px, rgba(82, 104, 83, 0.8) 100%), url("../images/forest-bg.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-image: linear-gradient(
+      rgba(116, 138, 116, 0.5) 0px,
+      rgba(116, 138, 116, 0.8) 100%
+    ),
+    url("../images/forest-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #header-logo {
-    height: 128px;
-    width: 128px;
+  height: 128px;
+  width: 128px;
 }
 
 #arrow-logo {
-    height: 32px;
-    width: 32px;
+  height: 32px;
+  width: 32px;
 }

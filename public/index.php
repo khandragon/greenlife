@@ -17,7 +17,7 @@
                             <h5 class="display-4">GreenLife</h3>
                         </div>
                         <div class="row justify-content-center mt-5">
-                            <a href="#" class="mt-1">
+                            <a href="#search-section" class="mt-5">
                                 <img src="resources/images/thin-arrowheads-pointing-down.png" alt="arrow-logo" id="arrow-logo">
                             </a>
                         </div>
@@ -25,5 +25,8 @@
                 </div>
             </div>
         </header>
+        <section id="search-section" class="page-section">
+            <div style="height:100%"></div>
+        </section>
     </body>
 </html>
