@@ -38,6 +38,11 @@ hr {
     border-color: #000000;
 }
 
+.nav-bar-font-size {
+  font-size: 1.75rem !important;
+  font-weight: 700 !important;
+}
+
 #offers-section {
   background-image: url("../images/sky-bg.jpg");
   background-repeat: no-repeat;

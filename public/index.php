@@ -6,6 +6,24 @@
         <link rel="stylesheet" href="resources/css/styles.css">    
     </head>
     <body>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <div class="container nav-bar-font-size">
+                <a class="navbar-brand js-scroll-trigger nav-bar-font-size" href="#">GreenLife</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger nav-bar-font-size" href="#offers">Offers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger nav-bar-font-size" href="#offers-section">Services</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
         <header id="header-bg" class="masthead">
             <div class="container h-100">
                 <div class="row h-100 align-items-center justify-content-center text-center">
@@ -119,5 +137,10 @@
                 </div>
             </div>
         </section>
+        <footer class="bg-light pt-4 pb-4">
+            <div class="container text-center">
+                <h4>Copyright © 2019 - Team undefined</h4>
+            </div>
+        </footer>
     </body>
 </html>
