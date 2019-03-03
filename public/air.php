@@ -23,6 +23,15 @@
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger nav-bar-font-size" href="air.php">Air Quality</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger nav-bar-font-size" href="#">Seismic Activity</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger nav-bar-font-size" href="#">Animalia</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger nav-bar-font-size" href="#">Flood Data</a>
+                        </li>
                     </ul>
                 </div>
             </div>
