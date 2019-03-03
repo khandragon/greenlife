@@ -32,9 +32,15 @@ html {
   background-size: cover;
 }
 
+hr {
+    max-width: 4rem;
+    border-width: .2rem;
+    border-color: #000000;
+}
+
 #header-logo {
-  height: 128px;
-  width: 128px;
+  height: 225px;
+  width: 225px;
 }
 
 #arrow-logo {
