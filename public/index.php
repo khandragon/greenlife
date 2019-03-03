@@ -15,10 +15,10 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger nav-bar-font-size" href="weather.php">Weather</a>
+                            <a class="nav-link js-scroll-trigger nav-bar-font-size" href="weather.php">Weather Data</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger nav-bar-font-size" href="#offers-section">Services</a>
+                            <a class="nav-link js-scroll-trigger nav-bar-font-size" href="air.php">Air Quality</a>
                         </li>
                     </ul>
                 </div>
@@ -127,7 +127,7 @@
                                     </p>
                                 </div>
                                 <div class="row justify-content-end">
-                                    <a class="btn btn-outline-primary btn-lg" href="#" role="button">Try it out!</a>
+                                    <a class="btn btn-outline-primary btn-lg" href="air.php" role="button">Try it out!</a>
                                 </div>
                             </div>
                         </div>
