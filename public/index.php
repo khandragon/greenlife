@@ -17,7 +17,7 @@
                             <h1>GreenLife</h1>
                         </div>
                         <hr class="my-4">
-                        <div class="row align-items-center justify-content-center text-center mt-4">
+                        <div class="row align-items-center justify-content-center text-center mt-5">
                             <h4>Learn more about the environment with us</h4>
                         </div>
                         <div class="row justify-content-center mt-5">
@@ -58,24 +58,55 @@
                 </div>
             </div>
         </section>
-        <!-- <section id="search" class="page-section">
-            <div class="container h-100">
-                <form action="" method="post">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Enter year">
-                        <small class="form-text text-muted">Year</small>
+        <section id="offers-section" class="mt-5">
+            <div class="container-fluid h-100">
+                <div class="row h-50 align-items-center justify-content-center text-center">
+                    <div class="col d-flex justify-content-center">
                     </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Enter month">
-                        <small class="form-text text-muted">Month</small>
+                    <div id="offers-section-info" class="col h-100">
+                        <div class="row h-100 align-items-center justify-content-center text-center">
+                            <div class="col ml-5">
+                                <div class="row mb-4">
+                                    <h1>Weather Data</h1>
+                                </div>
+                                <div class="row">
+                                    <p class="lead">
+                                        Get weather statistics made simple
+                                    </p>
+                                </div>
+                                <div class="row">
+                                    <p class="lead">
+                                        Give it a date and select a location on Google Maps 🗺️
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Enter day">
-                        <small class="form-text text-muted">Day</small>
+                </div>
+                <div class="row h-50 align-items-center justify-content-center text-center">
+                    <div id="offers-section-info" class="col h-100">
+                        <div class="row h-100 align-items-center justify-content-center text-center">
+                            <div class="col mr-5">
+                                <div class="row mb-4 justify-content-end">
+                                    <h1>Air Quality</h1>
+                                </div>
+                                <div class="row justify-content-end">
+                                    <p class="lead">
+                                        Get air quality info made simple
+                                    </p>
+                                </div>
+                                <div class="row justify-content-end">
+                                    <p class="lead">
+                                        🗺️ Give it a date and select a location on Google Maps
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+                    <div class="col d-flex justify-content-center">
+                    </div>
+                </div>
             </div>
-        </section> -->
+        </section>
     </body>
 </html>

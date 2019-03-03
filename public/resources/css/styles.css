@@ -38,6 +38,16 @@ hr {
     border-color: #000000;
 }
 
+#offers-section {
+  background-image: url("../images/sky-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#offers-section-info {
+  background-color: white;
+}
+
 #header-logo {
   height: 225px;
   width: 225px;
