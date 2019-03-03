@@ -1,5 +1,4 @@
 <?php
-
 function displayWeather($lat,$long)
 {
   $result = ApiRequester::getAirQuality($lat, $long);
@@ -52,17 +51,12 @@ if ($_SERVER['REQUEST_METHOD'] == "GET" && isset($_GET['lat']) && isset($_GET['l
         </nav> 
         <div id="search">
       <form id="frm1" action="" method="get">
-        <!-- City: <input id= type="text" name="city"><br>
-        Province or State: <input  id= type="text" name="state"><br>
-        Country: <input id= type="text" name="country"><br> -->
         <input type="hidden" id="latSubmit" name="lat" value="">
         <input type="hidden" id="longSubmit" name="long" value="">
         <input type="submit">
-
         <div id="map"></div>
       </form>
     </div>
-
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVzscNT6-Aj5tXOPqS6eC_-Zj8kE0N1lY&callback=initMap"></script>
     </body>
 </html>

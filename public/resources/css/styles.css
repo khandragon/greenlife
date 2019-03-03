@@ -2,6 +2,11 @@ html {
   scroll-behavior: smooth;
 }
 
+#map {
+  height: 500px;  /* The height is 400 pixels */
+  width: 90%;  /* The width is the width of the web page */
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
