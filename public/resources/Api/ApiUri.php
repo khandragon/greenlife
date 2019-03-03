@@ -15,4 +15,8 @@ define("AIR_RANKURL","api.airvisual.com/v2/city_ranking");
 
 define("AIR_NEARESTURL","api.airvisual.com/v2/nearest_station");
 
+define("WEATHER_URL","api.weatherbit.io/v2.0/history/daily?");
+
+define("WEATHER_APIKEY","1d21242201e0b389c81e1b22136eda92");
+
 define("PROVINCE_APIKEY", "AIzaSyClDJZfQAW6DA5b0GhHOwbWAIbpZZImJc8");

@@ -17,4 +17,13 @@ class ApiRequester
         $json = file_get_contents($url);
         return json_decode($json, true)["data"];
     }
+
+    public static function getWeather($city, $date){
+        $url = WEATHER_URL.WEATHER_APIKEY."tz=local&start_date=".$date."&end_date=".$date+1 ."&city=".$city;
+        $json = file_get_contents($url);
+        return json_decode($json,true);
+    }
+//    `https://api.weatherbit.io/v2.0/history/daily?key=${apiKey}&tz=local&`
+// start_date=2019-01-02&end_date=2019-01-03&city=New_York
+
 }

@@ -30,23 +30,23 @@
                     <div class="col">
                         <div class="row align-items-center justify-content-center text-center">
                             <h1 class="display-3 mb-5">Weather Lookup 🔍</h1>
-                            <form action="">
+                            <form action="" method="get">
                                 <div class="form-row mb-4">
                                     <div class="form-group col">
                                         <label for="inputDate">Date</label>
-                                        <input type="date" class="form-control" id="inputDate">
+                                        <input type="date" class="form-control" id="inputDate" name ="date">
                                     </div>
                                     <div class="form-group col">
                                         <label for="inputCountry">Country</label>
-                                        <input type="text" class="form-control" id="inputCountry" placeholder="Enter a country">
+                                        <input type="text" class="form-control" id="inputCountry" placeholder="Enter a country" name="country">
                                     </div>
                                     <div class="form-group col">
-                                        <label for="inputProvince">Province</label>
-                                        <input type="text" class="form-control" id="inputProvince" placeholder="Enter a province">
+                                        <label for="inputProvince">Province/State</label>
+                                        <input type="text" class="form-control" id="inputProvince" placeholder="Enter a province" name="province">
                                     </div>
                                     <div class="form-group col">
                                         <label for="inputCity">City</label>
-                                        <input type="text" class="form-control" id="inputCity" placeholder="Enter a city">
+                                        <input type="text" class="form-control" id="inputCity" placeholder="Enter a city" name="city">
                                     </div>
                                 </div>
                                 <div class="form-row align-items-center justify-content-center text-center">
@@ -58,5 +58,46 @@
                 </div>
             </div>
         </header>
+        <?php
+        include 'resources/Api/ApiRequester.php';
+
+        function displayWeather($city, $date)
+        {
+            $weather = ApiRequester::getWeather($city, $date);
+            var_dump($city);
+            // $info = ApiRequester::getInfo($lat, $long);
+            // $currentData = $result['data']['current'];
+            // $humidity = $currentData['weather']['hu'];
+            // $aqi = $currentData['pollution']['aqius'];
+            // $temperature =  $currentData['weather']['tp'];
+
+            // echo '<div class="container-fluid mb-5 mt-5">';
+            // echo '<div class="row align-items-center justify-content-center text-center ml-5 mr-5">';
+            // echo '<div class="col"><p class="h4">Results</p></div>';
+            // echo '<div class="w-100"></div>';
+            // echo '<div class="col"><p class="h4">Humidity</p></div>';
+            // echo '<div class="col"><p class="h4">'.$humidity.'</p></div>';
+            // echo '<div class="w-100"></div>';
+            // echo '<div class="col"><p class="h4">Air Quality Index (Lower = Better)</p></div>';
+            // echo '<div class="col"><p class="h4">'.$aqi.'</p></div>';
+            // echo '<div class="w-100"></div>';
+            // echo '<div class="col"><p class="h4">Temperature</p></div>';
+            // echo '<div class="col"><p class="h4">'.$temperature.' Celsius</p></div>';
+            // echo '<div class="w-100"></div>';
+            // echo '<div class="col"><p class="h4">Province</p></div>';
+            // echo '<div class="col"><p class="h4">'.$info["state"].'</p></div>';
+            // echo '<div class="w-100"></div>';
+            // echo '<div class="col"><p class="h4">City</p></div>';
+            // echo '<div class="col"><p class="h4">'.$info["city"].'</p></div></div></div>';
+        }
+
+        if ($_SERVER['REQUEST_METHOD'] == "GET" && isset($_GET['date']) && isset($_GET['country']) && isset($_GET['province']) && isset($_GET['city']))//isset($_GET['city']) && isset($_GET['country']) && isset($_GET['state']))
+        {
+            $city = $_GET['city'];
+            $date = $_GET['date'];
+            var_dump($city);
+            displayWeather($city,$date);
+        }
+        ?>
     </body>
 </html>
