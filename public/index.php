@@ -4,8 +4,6 @@ function displayWeather($country,$state,$city)
 {
   $result = ApiRequester::getAirQuality($country,$state,$city);
   $currentData = $result['data']['current'];
-  var_dump($currentData['weather']);
-  var_dump($currentData['pollution']);
   $humidity = $currentData['weather']['hu'];
   $aqi = $currentData['pollution']['aqius'];
   echo '<h2>Humidity: '.$humidity.'</h2>';
