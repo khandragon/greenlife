@@ -1,0 +1,69 @@
+html {
+  scroll-behavior: smooth;
+}
+
+#map {
+  height: 400px;  /* The height is 400 pixels */
+  width: 100%;  /* The width is the width of the web page */
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+#header-bg {
+  background-image: linear-gradient(
+      rgba(116, 138, 116, 0.5) 0px,
+      rgba(116, 138, 116, 0.8) 100%
+    ),
+    url("../images/forest-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+hr {
+  max-width: 4rem;
+  border-width: 0.2rem;
+  border-color: #000000;
+}
+
+.nav-bar-font-size {
+  font-size: 1.75rem !important;
+  font-weight: 700 !important;
+}
+
+#offers-section {
+  background-image: url("../images/sky-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#offers-section-info {
+  background-color: white;
+}
+
+#header-logo {
+  height: 225px;
+  width: 225px;
+}
+
+#arrow-logo {
+  height: 32px;
+  width: 32px;
+}
