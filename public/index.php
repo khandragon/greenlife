@@ -44,6 +44,38 @@ function parseCSV($date){
   }
 }
 
+function findClimateId($latitude, $longitude)
+{
+    $climateId = 0;
+    if (($handle = fopen("../Station-Inventory-EN.csv", "r")) !== FALSE) {
+        $diff = 1000;
+        while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+            $num = count($data);
+            for ($c=0; $c < $num; $c++) {
+
+                if (count($data) >= 12 && $data[12] == 2019)
+                {
+                    if ($c == 6)
+                    {
+                        $latitudeDiff = abs($data[$c] - $latitude);
+                        $longitudeDiff = abs($data[$c + 1] - $longitude);
+
+                        $summedDiff = $latitudeDiff + $longitudeDiff;
+                        if ($summedDiff < $diff)
+                        {
+                            $diff = $summedDiff;
+                            $climateId = $data[2];
+                        }
+                    }
+                }
+            }
+        }
+        fclose($handle);
+    }
+
+    return $climateId;
+}
+
 if ($_SERVER['REQUEST_METHOD'] == "GET" && isset($_GET['city']) && isset($_GET['country']) && isset($_GET['state']))
 {
   parseCSV(3);
