@@ -1,43 +1,27 @@
 <?php
 include 'Api/ApiRequester.php';
-include 'CsvUtil/ClimateUtil.php';
 
-function displayWeather($lat,$long, $date)
+function displayWeather($lat,$long)
 {
   $result = ApiRequester::getAirQuality($lat, $long);
+  $info = ApiRequester::getInfo($lat, $long);
   $currentData = $result['data']['current'];
   $humidity = $currentData['weather']['hu'];
   $aqi = $currentData['pollution']['aqius'];
   $temperature =  $currentData['weather']['tp'];
-  var_dump($temperature);
-  $climateId = ClimateUtil::findClimateId($lat, $long);
-  $splitDate = explode("-", $date);
-  $province = ApiRequester::getProvince($lat,$long);
-  var_dump($province);
-  //$temperature = ClimateUtil::getAverageTemperature($climateId,$splitDate[2],$splitDate[1],$splitDate[0],$province);
+
   echo '<h2>Humidity: '.$humidity.'</h2>';
-    echo '<h2>Air Quality Index: '. $aqi .' </h2>';
-    echo '<h2>Temperature(celsius): '. $temperature .' </h2>';
-  // echo '<h1>City: '.$_GET['city'].'</h1>';
-  // echo '<h1>Country: '.$_GET['country'].'</h1>';
-  // echo '<h1>State / Province: '.$_GET['state'].'</h1>';
+  echo '<h2>Air Quality Index: '. $aqi .' </h2>';
+  echo '<h2>Temperature(celsius): '. $temperature .' </h2>';
+  echo '<h2>Province: '. $info["state"] .' </h2>';
+  echo '<h2>City: '. $info["city"] .' </h2>';
 }
 
-function displayNews(){
-  $result = ApiRequester::getNews();
-  $articles = $result['articles'];
-  foreach($articles as $article){
-    echo '<h2>'.$article['title'] .'</h2>';
-    echo '<p>' .$article['content']. '</p>';
-  }
-}
-
-if ($_SERVER['REQUEST_METHOD'] == "GET" && isset($_GET['lat']) && isset($_GET['long']) && isset($_GET['date']))//isset($_GET['city']) && isset($_GET['country']) && isset($_GET['state']))
+if ($_SERVER['REQUEST_METHOD'] == "GET" && isset($_GET['lat']) && isset($_GET['long']))//isset($_GET['city']) && isset($_GET['country']) && isset($_GET['state']))
 {
   $lat = $_GET['lat'];
   $long = $_GET['long'];
-  $date = $_GET['date'];
-  displayWeather($lat,$long, $date);
+  displayWeather($lat,$long);
 }
 ?>
 <!DOCTYPE html>
@@ -47,14 +31,12 @@ if ($_SERVER['REQUEST_METHOD'] == "GET" && isset($_GET['lat']) && isset($_GET['l
     <script type="text/javascript" src="./resources/js/MapJs.js"></script>
   </head>
   <body>
-    <h3>My Google Maps Demo</h3>
     <!--The div element for the map -->
     <div id="search">
       <form id="frm1" action="" method="get">
         <!-- City: <input id= type="text" name="city"><br>
         Province or State: <input  id= type="text" name="state"><br>
         Country: <input id= type="text" name="country"><br> -->
-        Date: <input type="date" name="date"><br>
         <input type="hidden" id="latSubmit" name="lat" value="">
         <input type="hidden" id="longSubmit" name="long" value="">
         <input type="submit">
