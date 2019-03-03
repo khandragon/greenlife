@@ -22,12 +22,35 @@ function displayNews(){
   }
 }
 
+function parseCSV($date){
+  $row = 1;
+  $tempLink = "https://dd.meteo.gc.ca/climate/observations/daily/csv/QC/climate_daily_QC_7085106_2018-07_PID.csv";
+  if (($handle = fopen($tempLink, "r")) !== FALSE) {
+      while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+          $num = count($data);
+          $row++;
+          if($row == 8){
+            echo "Here is the Climate Identifier: " . $data[1] . "<br />\n";
+          }
+          if($row > 27){
+            if($data[3] == $date){
+              $meanTemp = ($data[5] + $data[7]) / 2;
+              echo "<p>Your mean temperature for that day is: " .$meanTemp . "</p>\n";
+              $row++;
+            }
+          }
+      }
+      fclose($handle);
+  }
+}
+
 if ($_SERVER['REQUEST_METHOD'] == "GET" && isset($_GET['city']) && isset($_GET['country']) && isset($_GET['state']))
 {
-  $placeHolderURL = "https://dd.meteo.gc.ca/climate/observations/daily/csv/AB/climate_daily_AB_3010890_1958-09_PID.csv";
-  $country = $_GET['country'];
-  $state = $_GET['state'];
-  $city = $_GET['city'];
+  parseCSV(3);
+
+  // $country = $_GET['country'];
+  // $state = $_GET['state'];
+  // $city = $_GET['city'];
 //  displayWeather($country,$state,$city);
 }
 ?>
