@@ -9,7 +9,7 @@ define("AIR_URL", "http://api.airvisual.com/v2/nearest_city?");
 
 define("NEWS_APIKEY", "0c865f9e95dc4d67ab00616448c75638");
 
-define("AIR_APIKEY", "nZphb9kEGPQsYMpSc");
+define("AIR_APIKEY", "BdGi96riWxNK673bY");
 
 define("AIR_RANKURL","api.airvisual.com/v2/city_ranking");
 
