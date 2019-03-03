@@ -1,0 +1,15 @@
+#header-bg {
+    background-image: linear-gradient(rgba(82, 104, 83, 0.5) 0px, rgba(82, 104, 83, 0.8) 100%), url("../images/forest-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#header-logo {
+    height: 128px;
+    width: 128px;
+}
+
+#arrow-logo {
+    height: 32px;
+    width: 32px;
+}
