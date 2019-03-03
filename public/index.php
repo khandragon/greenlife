@@ -24,10 +24,11 @@ function displayNews(){
 
 if ($_SERVER['REQUEST_METHOD'] == "GET" && isset($_GET['city']) && isset($_GET['country']) && isset($_GET['state']))
 {
+  $placeHolderURL = "https://dd.meteo.gc.ca/climate/observations/daily/csv/AB/climate_daily_AB_3010890_1958-09_PID.csv";
   $country = $_GET['country'];
   $state = $_GET['state'];
   $city = $_GET['city'];
-  displayWeather($country,$state,$city);
+//  displayWeather($country,$state,$city);
 }
 ?>
 <!DOCTYPE html>
