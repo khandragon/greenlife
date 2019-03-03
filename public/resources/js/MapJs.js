@@ -1,11 +1,14 @@
-var latLong = [];
-var latLng = { lat: 45.5026491, lng: -73.5641203 };
+if (sessionStorage.getItem("lat") == null)
+    var latLng = { lat: 45.5026491, lng: -73.5641203 };
+else
+    latLng = {lat: parseFloat(sessionStorage.getItem("lat")), lng: parseFloat(sessionStorage.getItem("lng"))};
 
 // Initialize and add the map
 function initMap() {
   // The location of Uluru
   var minZoom = 5;
   // The map, centered at Uluru
+  console.log(latLng);
   var map = new google.maps.Map(document.getElementById("map"), {
     zoom: 5,
     center: latLng
@@ -19,8 +22,8 @@ function initMap() {
     var clickLat = event.latLng.lat();
     var clickLon = event.latLng.lng();
 
-    latLong.push(clickLat);
-    latLong.push(clickLon);
+    sessionStorage.setItem("lat", clickLat);
+    sessionStorage.setItem("lng", clickLon);
 
     // show in input box
     console.log("lat", clickLat);
@@ -29,8 +32,8 @@ function initMap() {
     document.getElementById("latSubmit").value = clickLat;
     document.getElementById("longSubmit").value = clickLon;
     
-    latlng = new google.maps.LatLng(clickLat, clickLon);
-    marker.setPosition(latlng);
+    latLng = new google.maps.LatLng(clickLat, clickLon);
+    marker.setPosition(latLng);
   });
 
   // Bounds for North America
@@ -49,7 +52,7 @@ function initMap() {
     if (strictBounds.contains(map.getCenter())) return;
 
     // We're out of bounds - Move the map back within the bounds
-    console.log(strictBounds);
+    //console.log(strictBounds);
     var c = map.getCenter(),
       x = c.lng(),
       y = c.lat(),
@@ -58,6 +61,8 @@ function initMap() {
       minX = strictBounds.getSouthWest().lng(),
       minY = strictBounds.getSouthWest().lat();
 
+    sessionStorage.setItem("lat", y);
+    sessionStorage.setItem("lng", x);
     if (x < minX) x = minX;
     if (x > maxX) x = maxX;
     if (y < minY) y = minY;
@@ -67,6 +72,3 @@ function initMap() {
   });
 }
 
-function returnCords() {
-    return latLong;
-}

@@ -35,7 +35,6 @@ if ($_SERVER['REQUEST_METHOD'] == "GET" && isset($_GET['lat']) && isset($_GET['l
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="./resources/css/main.css">
-    <script type="text/javascript" src="path-to-javascript-file.js"></script>
     <script type="text/javascript" src="./resources/js/MapJs.js"></script>
   </head>
   <body>
