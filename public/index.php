@@ -47,6 +47,11 @@
                             <h3 class="mb-2">Air Quality</h3>
                             <p class="text-muted mb-0">We make sure to inform the quality of air you are breathing.</p>
                         </div>
+                        <div class="mt-5">
+                            <a href="#offers-section">
+                                <img src="resources/images/thin-arrowheads-pointing-down.png" alt="arrow-logo" id="arrow-logo">
+                            </a>
+                        </div>
                     </div>
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="mt-5">
@@ -65,9 +70,9 @@
                     </div>
                     <div id="offers-section-info" class="col h-100">
                         <div class="row h-100 align-items-center justify-content-center text-center">
-                            <div class="col ml-5">
+                            <div class="col ml-5 mr-5">
                                 <div class="row mb-4">
-                                    <h1>Weather Data</h1>
+                                    <h1>Weather Data ☁️</h1>
                                 </div>
                                 <div class="row">
                                     <p class="lead">
@@ -79,6 +84,9 @@
                                         Give it a date and select a location on Google Maps 🗺️
                                     </p>
                                 </div>
+                                <div class="row">
+                                    <a class="btn btn-outline-primary btn-lg" href="#" role="button">Try it out!</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -86,9 +94,9 @@
                 <div class="row h-50 align-items-center justify-content-center text-center">
                     <div id="offers-section-info" class="col h-100">
                         <div class="row h-100 align-items-center justify-content-center text-center">
-                            <div class="col mr-5">
+                            <div class="col ml-5 mr-5">
                                 <div class="row mb-4 justify-content-end">
-                                    <h1>Air Quality</h1>
+                                    <h1>🎐 Air Quality</h1>
                                 </div>
                                 <div class="row justify-content-end">
                                     <p class="lead">
@@ -99,6 +107,9 @@
                                     <p class="lead">
                                         🗺️ Give it a date and select a location on Google Maps
                                     </p>
+                                </div>
+                                <div class="row justify-content-end">
+                                    <a class="btn btn-outline-primary btn-lg" href="#" role="button">Try it out!</a>
                                 </div>
                             </div>
                         </div>
