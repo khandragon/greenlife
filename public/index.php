@@ -1,8 +1,30 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] == "GET" && isset($_GET['city']) && isset($_GET['country']) && isset($_GET['state'])) {
+include 'Api/ApiRequester.php';
+function displayWeather($country,$state,$city)
+{
+  $result = ApiRequester::getAirQuality($country,$state,$city);
+  $humidity = $result['data']['current']['weather']['hu'];
+  echo '<h2>Humidity: '.$humidity.'</h2>';
   echo '<h1>City: '.$_GET['city'].'</h1>';
-  echo '<h1>City: '.$_GET['country'].'</h1>';
+  echo '<h1>Country: '.$_GET['country'].'</h1>';
   echo '<h1>State / Province: '.$_GET['state'].'</h1>';
+}
+
+function displayNews(){
+  $result = ApiRequester::getNews();
+  $articles = $result['articles'];
+  foreach($articles as $article){
+    echo '<h2>'.$article['title'] .'</h2>';
+    echo '<p>' .$article['content']. '</p>';
+  }
+}
+
+if ($_SERVER['REQUEST_METHOD'] == "GET" && isset($_GET['city']) && isset($_GET['country']) && isset($_GET['state']))
+{
+  $country = $_GET['country'];
+  $state = $_GET['state'];
+  $city = $_GET['city'];
+  displayWeather($country,$state,$city);
 }
 ?>
 <!DOCTYPE html>
