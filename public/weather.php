@@ -3,7 +3,9 @@
         <meta charset="utf-8">
         <title>GreenLife</title>
         <link rel="stylesheet" href="resources/css/bootstrap.min.css">
-        <link rel="stylesheet" href="resources/css/styles.css">  
+        <link rel="stylesheet" href="resources/css/styles.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+        <script src="resources/js/bootstrap.js"></script>    
     </head>
     <body>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
