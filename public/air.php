@@ -4,6 +4,8 @@
         <title>GreenLife</title>
         <link rel="stylesheet" href="resources/css/bootstrap.min.css">
         <link rel="stylesheet" href="resources/css/styles.css"> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+        <script src="resources/js/bootstrap.js"></script>  
         <script type="text/javascript" src="resources/js/MapJs.js"></script>
     </head>
     <body>
@@ -25,7 +27,7 @@
                 </div>
             </div>
         </nav>
-        <header class="masthead mt-4">
+        <header class="masthead">
             <div class="container h-100">
                 <div class="row h-100 align-items-center justify-content-center text-center">
                     <div class="col mt-5">
