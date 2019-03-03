@@ -5,29 +5,42 @@
 //getAverageTemperature(7011982,9,2,2018,'QC');
 class ClimateUtil
 {
-    public function getAverageTemperature($climateId,$date,$month,$year,$province){
+    public static function getAverageTemperature($climateId,$day,$month,$year,$province){
+        $provinceTr = [
+            'Quebec' => 'QC',
+            'Ontario' => 'ON',
+            'Yukon' => 'YT',
+            'British Columbia' => 'BC',
+            'Manitoba' => 'MB',
+            'Nove Scotia' => 'NS',
+            'Alberta' => 'AB',
+            'Northwest Territories' => 'NT',
+            'Newfoundland' => 'NL',
+            'Prince Edward Island' => 'PE',
+            'Saskatchewan' => 'SK',
+            'Nunavut' => 'NU',
+            'New Brunswick' => 'NB'
+        ];
+
         $row = 1;
         if(strlen($month) == 1){
-            echo 'true';
             $month = str_pad($month, 2, '0', STR_PAD_LEFT);
         }
-        $tempLink = "https://dd.meteo.gc.ca/climate/observations/daily/csv/". $province."/climate_daily_".$province."_".$climateId."_".$year."-". $month ."_PID.csv";
-        echo $tempLink.'</br>';
+        $tempLink = "https://dd.meteo.gc.ca/climate/observations/daily/csv/".$provinceTr[$province]."/climate_daily_".$provinceTr[$province]."_".$climateId."_".$year."-". $month ."_PID.csv";
+
+        echo $tempLink;
         if (($handle = fopen($tempLink, "r")) !== FALSE) {
             while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
                 $num = count($data);
                 $row++;
-                if($row == 8){
-                    echo "Here is the Climate Identifier: " . $data[1] . "<br />\n";
-                }
                 if($row > 27){
-                    if($data[3] == $date){
+                    if($data[3] == $day){
                         if($data[5] == 'M' || $data[7] == 'M' || $data[5] == '' || $data[7] == '' ){
-                            echo '<p>There is no recorded temperature for this</p>';
+                            return '<p>There is no recorded temperature for this</p>';
                             break;
                         }
                         $meanTemp = ($data[5] + $data[7]) / 2;
-                        echo "<p>Your mean temperature for that day is: " .$meanTemp . "</p>\n";
+                        return "<p>Your mean temperature for that day is: " .$meanTemp . "</p>\n";
                         $row++;
                     }
                 }
@@ -36,9 +49,9 @@ class ClimateUtil
         }
     }
 
-    function findClimateId($latitude, $longitude){
+    public static function findClimateId($latitude, $longitude){
         $climateId = 0;
-        if (($handle = fopen("../Station-Inventory-EN.csv", "r")) !== FALSE) {
+        if (($handle = fopen(__DIR__."/Station-Inventory-EN.csv", "r")) !== FALSE) {
             $diff = 1000;
             while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
                 $num = count($data);

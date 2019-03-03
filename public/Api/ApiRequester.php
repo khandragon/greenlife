@@ -36,5 +36,12 @@ class ApiRequester
       return json_decode($json, true);
     }
 
+    public static function getProvince($lat, $long)
+    {
+        $url = AIR_URL . "lat=" . $lat . "&lon=" . $long . "&key=" . AIR_APIKEY;
+        $json = file_get_contents($url);
+        return json_decode($json, true)["data"]["state"];
+    }
+
 
 }

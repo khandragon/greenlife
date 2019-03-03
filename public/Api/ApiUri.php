@@ -19,3 +19,5 @@
  define("AIR_RANKURL","api.airvisual.com/v2/city_ranking");
 
  define("AIR_NEARESTURL","api.airvisual.com/v2/nearest_station");
+
+ define("PROVINCE_APIKEY", "AIzaSyClDJZfQAW6DA5b0GhHOwbWAIbpZZImJc8");
