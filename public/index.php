@@ -44,7 +44,6 @@ function findClimateId($latitude, $longitude)
         }
         fclose($handle);
     }
-
     return $climateId;
 }
 
