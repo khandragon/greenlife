@@ -33,9 +33,9 @@ html {
 }
 
 hr {
-    max-width: 4rem;
-    border-width: .2rem;
-    border-color: #000000;
+  max-width: 4rem;
+  border-width: 0.2rem;
+  border-color: #000000;
 }
 
 .nav-bar-font-size {

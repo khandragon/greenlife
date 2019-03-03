@@ -15,7 +15,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger nav-bar-font-size" href="#offers">Offers</a>
+                            <a class="nav-link js-scroll-trigger nav-bar-font-size" href="weather.php">Weather</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger nav-bar-font-size" href="#offers-section">Services</a>
@@ -99,11 +99,11 @@
                                 </div>
                                 <div class="row">
                                     <p class="lead">
-                                        Give it a date and select a location on Google Maps 🗺️
+                                        Select date and input a specific location 🗺️
                                     </p>
                                 </div>
                                 <div class="row">
-                                    <a class="btn btn-outline-primary btn-lg" href="#" role="button">Try it out!</a>
+                                    <a class="btn btn-outline-primary btn-lg" href="weather.php" role="button">Try it out!</a>
                                 </div>
                             </div>
                         </div>
